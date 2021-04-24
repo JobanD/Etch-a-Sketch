@@ -1,0 +1,10 @@
+.square {
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.container {
+  margin: auto;
+  font-size: 0;
+}
