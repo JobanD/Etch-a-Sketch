@@ -1,5 +1,9 @@
+// Etch-a-sketch JS project
+// Joban Dhindsa
+
 let container = document.querySelector(".container");
 
+// function to create initial grid
 function createGrid(gridSize) {
   for (let i = 0; i < gridSize; i++) {
     const row = document.createElement("div");
@@ -15,8 +19,10 @@ function createGrid(gridSize) {
       row.appendChild(square);
     }
   }
+  getSquare();
 }
 
+// get grid size from user
 function getSize() {
   gridSize = prompt("Enter size of square grid: ", 16);
   createGrid(gridSize);
@@ -24,14 +30,13 @@ function getSize() {
 
 getSize();
 
-square.addEventListener("click", getColor);
-
-function getColor(event) {
-  let square = event.target;
-  alert("Hello World");
-  //   let square = document.querySelector("#innerSquare");
-  //   let red = Math.floor(Math.random() * 256 + 1);
-  //   let green = Math.floor(Math.random() * 256 + 1);
-  //   let blue = Math.floor(Math.random() * 256 + 1);
-  //   return (square.style.backgroundColor = `rgb(${red},${green},${blue})`);
+// add event listener on mouse over for each square in grid and change its color
+// essentially this is the sketching function
+function getSquare() {
+  let squares = document.querySelectorAll(".square");
+  squares.forEach((sq) => {
+    sq.addEventListener("mouseover", () => {
+      sq.style.backgroundColor = "black";
+    });
+  });
 }
